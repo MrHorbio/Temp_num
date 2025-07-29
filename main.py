@@ -23,7 +23,7 @@ async def request_number():
         response =  await client.get(url,headers=FIVESIM_HEADERS)
         if response.status_code != 200:
             raise HTTPException(status_code=400,detail="Error getting number")
-        return response.json()
+        return response.text()
         # return{
         #     "number":data["phone"],
         #     "id":data["id"]
